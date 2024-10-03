@@ -9,6 +9,14 @@ class Library:
         for i in self.books:
             print(i)
 
+    # borrow book
+    def borrow(self, book):
+        if book in self.books:
+            self.books.remove(book)
+            print("You have borrowed a book")
+        else:
+            print("The book is not available")
+
 # Main
 bookList = ["The Journey Of Mary", "The Adventures of Toto", "The private zoo of Grandfather", "Happy Prince"]
 # Create object
@@ -24,6 +32,9 @@ while True:
 
     if choice =="1":
        library.display()
+    elif choice == "2":
+        book = input('Enter the book you want to borrow:')
+        library.borrow(book)
     elif choice == "4":
         break
     else:
